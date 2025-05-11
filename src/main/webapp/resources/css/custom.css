@@ -1,0 +1,20 @@
+/* Custom CSS to override Bootstrap styles */
+
+/* Override primary button color to light yellow */
+.btn-primary {
+    background-color: #FFFFE0 !important; /* Light yellow */
+    border-color: #E6E6AA !important;
+    color: #000 !important; /* Black text for better contrast on light yellow */
+}
+
+/* Hover state for primary buttons */
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #F0F0C0 !important; /* Slightly darker yellow for hover state */
+    border-color: #D6D68A !important;
+}
+
+/* Card header background color override */
+.card-header.bg-primary {
+    background-color: #FFFFE0 !important;
+    color: #000 !important;
+}

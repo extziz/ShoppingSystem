@@ -38,7 +38,4 @@ public class Store {
     @Size(max = 100, message = "Email cannot exceed 100 characters")
     private String email;
 
-    @Builder.Default
-    @ManyToMany(mappedBy = "stores", fetch = FetchType.LAZY)
-    private Set<Product> products = new HashSet<>();
 }

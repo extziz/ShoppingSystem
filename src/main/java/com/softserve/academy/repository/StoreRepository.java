@@ -19,6 +19,4 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
     // Find all stores by location
     List<Store> findByLocation(String location);
 
-    // Find all stores that contain a specific product
-    List<Store> findByProductsContaining(Product product);
 }
