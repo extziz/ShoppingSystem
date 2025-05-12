@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -253,6 +254,28 @@ public class ProductController {
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("errorMessage", "Error processing purchase: " + e.getMessage());
             return "redirect:/products/buy?productId=" + productId + "&storeId=" + storeId;
+        }
+    }
+
+    @GetMapping("/history")
+    public String showPurchaseHistory(Model model) {
+        try {
+            // Get all purchases ordered by date (most recent first)
+            List<Purchase> purchases = purchaseRepository.findAll();
+
+            // Sort purchases by date (most recent first)
+            purchases.sort((p1, p2) -> p2.getPurchaseDate().compareTo(p1.getPurchaseDate()));
+
+            // Format the date for display
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+            model.addAttribute("purchases", purchases);
+            model.addAttribute("dateFormatter", formatter);
+
+            return "product/history";
+        } catch (Exception e) {
+            model.addAttribute("errorMessage", "Error retrieving purchase history: " + e.getMessage());
+            return "redirect:/";
         }
     }
 }

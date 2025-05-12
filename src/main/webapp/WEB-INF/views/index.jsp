@@ -39,6 +39,11 @@
                                 <i class="bi bi-search"></i> Buy a Product
                             </a>
                         </div>
+                        <div class="d-grid gap-2 mt-2">
+                            <a href="${pageContext.request.contextPath}/products/history" class="btn btn-primary btn-lg">
+                                <i class="bi bi-clock-history"></i> Purchase History
+                            </a>
+                        </div>
                         </div>
                     </div>
                 </div>
