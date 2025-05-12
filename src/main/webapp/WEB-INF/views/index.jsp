@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="${pageContext.request.contextPath}/resources/css/custom.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/resources/css/custom.css?v=1.3" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-4">
@@ -33,6 +33,11 @@
                                 <i class="bi bi-plus-circle"></i> Add Product to Store
                             </a>
                             <!-- Add more menu options here as needed -->
+                        </div>
+                        <div class="d-grid gap-2 mt-2">
+                            <a href="${pageContext.request.contextPath}/products/search" class="btn btn-primary btn-lg">
+                                <i class="bi bi-search"></i> Buy a Product
+                            </a>
                         </div>
                         </div>
                     </div>

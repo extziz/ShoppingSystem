@@ -14,6 +14,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @EqualsAndHashCode(exclude = {"stores", "purchases"})
 @ToString(exclude = {"stores", "purchases"})
+@Builder
 public class Product {
 
     @Id
@@ -32,5 +33,4 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Purchase> purchases = new ArrayList<>();
-
 }

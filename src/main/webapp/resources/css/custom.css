@@ -1,20 +1,28 @@
 /* Custom CSS to override Bootstrap styles */
 
 /* Override primary button color to light yellow */
-.btn-primary {
+.btn-primary, .btn-success, .btn-sm.btn-primary {
     background-color: #FFFFE0 !important; /* Light yellow */
     border-color: #E6E6AA !important;
     color: #000 !important; /* Black text for better contrast on light yellow */
 }
 
 /* Hover state for primary buttons */
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+.btn-success:hover, .btn-success:focus, .btn-success:active,
+.btn-sm.btn-primary:hover, .btn-sm.btn-primary:focus, .btn-sm.btn-primary:active {
     background-color: #F0F0C0 !important; /* Slightly darker yellow for hover state */
     border-color: #D6D68A !important;
 }
 
 /* Card header background color override */
-.card-header.bg-primary {
+.card-header.bg-primary, .card-header.bg-success {
+    background-color: #FFFFE0 !important;
+    color: #000 !important;
+}
+
+/* Badge background color override */
+.badge.bg-success {
     background-color: #FFFFE0 !important;
     color: #000 !important;
 }

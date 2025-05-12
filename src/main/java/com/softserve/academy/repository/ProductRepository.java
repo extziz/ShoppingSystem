@@ -13,4 +13,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Product save(Product product);
     Optional<Product> findById(Long id);
     List<Product> findByCategoryId(Long categoryId);
+    List<Product> findByNameContainingIgnoreCase(String name);
 }

@@ -19,4 +19,8 @@ public class StoreService {
     public List<Store> getAllStores() {
         return storeRepository.findAll();
     }
+
+    public Store getStoreById(Long id) {
+        return storeRepository.findById(id).orElse(null);
+    }
 }

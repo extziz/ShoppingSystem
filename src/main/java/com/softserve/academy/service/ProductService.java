@@ -42,4 +42,12 @@ public class ProductService {
         List<Product> products = productRepository.findByCategoryId(categoryId);
         return products;
     }
+
+    public List<Product> findProductsByName(String name) {
+        return productRepository.findByNameContainingIgnoreCase(name);
+    }
+
+    public Product getProductById(Long id) {
+        return productRepository.findById(id).orElse(null);
+    }
 }
